@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* Colors */
+:root {
+  /* Paleta Base */
+  --cor-0: #000000;
+  --cor-1: #0D0D0D;
+  --cor-2: #1A1A1A;
+  --cor-3: #262626;
+  --cor-4: #333333;
+  --cor-5: #404040;
+  --cor-6: #595959;
+  --cor-7: #737373;
+  --cor-8: #8C8C8C;
+  --cor-9: #CCCCCC;
+  --cor-10: #ffffff;
+  /* Paleta de Verde */
+  --cor-v0: #DEF3E4;
+  --cor-v1: #A6E0AC;
+  --cor-v2: #28A745;
+  --cor-v3: #1E7E36;
+  --cor-v4: #155422;
+  /* Paleta de Amarelo */
+  --cor-a0: #FDF2C1;
+  --cor-a1: #FFF1A3;
+  --cor-a2: #F1C40F;
+  --cor-a3: #C4A40D;
+  --cor-a4: #8F7809;
+  /* Shadow box */
+  --shadow-box: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.cor-0 {
+  color: var(--cor-0);
+}
+.cor-1 {
+  color: var(--cor-1);
+}
+.cor-2 {
+  color: var(--cor-2);
+}
+.cor-2 {
+  color: var(--cor-2);
+}
+.cor-4 {
+  color: var(--cor-4);
+}
+.cor-5 {
+  color: var(--cor-5);
+}
+.cor-6 {
+  color: var(--cor-6);
+}
+.cor-7 {
+  color: var(--cor-7);
+}
+.cor-8 {
+  color: var(--cor-8);
+}
+.cor-9 {
+  color: var(--cor-9);
+}
+.cor-10 {
+  color: var(--cor-10);
+}
+
+
+
+.cor-v0 {
+  color: var(--cor-v0);
+}
+.cor-v1 {
+  color: var(--cor-v1);
+}
+.cor-v2 {
+  color: var(--cor-v2);
+}
+.cor-v3 {
+  color: var(--cor-v3);
+}
+.cor-v4 {
+  color: var(--cor-v4);
+}
+
+
+
+.cor-a0 {
+  color: var(--cor-a0);
+}
+.cor-a1 {
+  color: var(--cor-a1);
+}
+.cor-a2 {
+  color: var(--cor-a2);
+}
+.cor-a3 {
+  color: var(--cor-a3);
+}
+.cor-a4 {
+  color: var(--cor-a4);
+}
+
+
+
+
+:root {
+  --font-family: "Poppins", sans-serif;
+}
+
+/* Tamanhos de Fonte */
+.font-xs { font-size: 8.88px; font-family: var(--font-family); }
+.font-sm { font-size: 9.99px; font-family: var(--font-family); }
+.font-md { font-size: 11.24px; font-family: var(--font-family); }
+.font-lg { font-size: 12.64px; font-family: var(--font-family); }
+.font-xl { font-size: 14.22px; font-family: var(--font-family); }
+.font-2xl { font-size: 16px; font-family: var(--font-family); }
+.font-3xl { font-size: 18px; font-family: var(--font-family); }
+.font-4xl { font-size: 20.25px; font-family: var(--font-family); }
+.font-5xl { font-size: 22.78px; font-family: var(--font-family); }
+.font-6xl { font-size: 25.63px; font-family: var(--font-family); }
+.font-7xl { font-size: 28.83px; font-family: var(--font-family); }
+.font-8xl { font-size: 32.43px; font-family: var(--font-family); }
+.font-9xl { font-size: 36.48px; font-family: var(--font-family); }
+.font-10xl { font-size: 41.04px; font-family: var(--font-family); }
+.font-11xl { font-size: 46.17px; font-family: var(--font-family); }
+
+/* Line Heights */
+.lh-100 { line-height: 100%; }
+.lh-150 { line-height: 150%; }
+
+/* Espessuras da Fonte */
+.regular { font-weight: 400; }
+.medium { font-weight: 500; }
+.semibold { font-weight: 600; }
+.bold { font-weight: 700; }
