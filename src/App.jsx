@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import Navbar from './components/Navbar.jsx'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
       <div>
-        <Navbar />
+        <AppRoutes />
       </div>
   )
 }

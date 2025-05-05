@@ -14,11 +14,10 @@ nav ul {
 nav ul li img {
   display: block;
   align-content: center;
+  padding: 0 8px;
 }
 
 nav ul li:nth-child(odd) {
   margin: 0 8px;
-  padding: 0 8px;
-
   align-content: center;
 }
