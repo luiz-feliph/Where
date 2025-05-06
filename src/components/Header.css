@@ -1,0 +1,111 @@
+header {
+  background-color: var(--cor-v1);
+  border-radius: 0 0 12px 12px;
+  height: 49px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+  margin: 0 16px;
+}
+
+.select {
+  grid-column: span 3;
+  margin-top: 6px;
+}
+
+#select-button{
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  justify-content: space-between;
+  
+  border-radius: 8px;
+}
+
+#selected-value {
+  margin: 0 auto;
+}
+
+#chevrons {
+  color: var(--cor-v0);
+  background-color: var(--cor-v3);
+  border-radius: 4px;
+}
+
+#chevron-up {
+  display: none;
+}
+
+#options-view-button:checked + #select-button #chevron-down {
+  display: none;
+}
+#options-view-button:checked + #select-button #chevron-up {
+  display: inline-block;
+}
+
+#month-select {
+  position: relative;
+}
+
+#options-view-button {
+  all: unset;
+
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+  z-index: 3;
+}
+
+
+#options {
+  border-radius: 6px;
+  border: 1px solid var(--cor-v3);
+  background-color: var(--cor-v1);
+  display: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  width: 100%;
+  border-bottom: 1px solid var(--cor-v2);
+  position: relative;
+}
+
+.option svg:last-child {
+  margin-left: auto;
+}
+
+.option:has(input:checked),
+.option:hover {
+  background-color: var(--cor-v0);
+}
+
+.option:has(input:focus) {
+  outline: 3px solid var(--cor-v2);
+}
+
+#check {
+  display: none;
+}
+
+.option:has(input:checked) #check {
+  display: block;
+}
+
+.option input[type="radio"] {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+#month-select:has(#options-view-button:checked) + #options {
+  display: block;
+}

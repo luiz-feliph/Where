@@ -1,12 +1,13 @@
 import '../index.css'
-import './Home.module.css'
+import './Home.css'
+import Header from '../components/Header'
 
 
 function Home() {
 
   return (
       <div>
-         Você está na Home
+        <Header />
       </div>
   )
 }

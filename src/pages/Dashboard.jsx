@@ -1,5 +1,5 @@
 import '../index.css'
-import './Dashboard.module.css'
+import './Dashboard.css'
 
 function Dashboard() {
   return (

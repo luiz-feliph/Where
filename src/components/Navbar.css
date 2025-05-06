@@ -1,13 +1,18 @@
 nav {
   height: 48px;
+  width: 100%;
   background-color: var(--cor-v2);
   align-content: center;
+  position: fixed;
+  bottom: 0;
+  margin-top: auto;
 }
 
 nav ul {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
 }
 
