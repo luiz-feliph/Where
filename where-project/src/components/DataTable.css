@@ -1,0 +1,22 @@
+#dataTable-container {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed
+}
+
+#grid-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr .5fr .5fr;
+  gap: 8px;
+  margin: 0 16px;
+  border-bottom: 1px solid var(--cor-v1);
+  align-items: center;
+  justify-items: center;
+  padding: 4px 0;
+}
+
+#grid-layout img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
