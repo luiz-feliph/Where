@@ -1,0 +1,125 @@
+#addData {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  margin: 0 16px 8px 16px;
+  height: 20px;
+  align-items: center;
+}
+
+#name {
+  grid-column: span 2;
+  width: 100%;
+  border: none;
+  height: 100%;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+.select-ad {
+  grid-column: 3;
+  position: relative;
+  background-color: var(--cor-10);
+  border-radius: 4px;
+}
+
+#select-button-ad {
+  display: flex;
+  align-items: center;
+}
+
+#selected-value-ad {
+  margin: 0 auto;
+}
+
+#chevrons-ad {
+  display: flex;
+  align-self: center;
+  color: var(--cor-a2);
+  padding: 2px 0;
+}
+
+#chevron-up-ad {
+  display: none;
+}
+
+#options-view-button-ad:checked + #select-button-ad #chevron-down-ad {
+  display: none;
+}
+#options-view-button-ad:checked + #select-button-ad #chevron-up-ad {
+  display: inline-block;
+}
+
+#category-select {
+  position: relative;
+}
+
+#options-view-button-ad {
+  all: unset;
+
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+  z-index: 3;
+}
+
+#options-ad {
+  position: absolute;
+  width: 100%;
+  border: 1px solid var(--cor-a2);
+  background-color: var(--cor-a0);
+  display: none;
+}
+
+.option-ad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px;
+  width: 100%;
+  border-bottom: 1px solid var(--cor-a2);
+  position: relative;
+}
+
+.option-ad svg:last-child {
+  margin-left: auto;
+}
+
+.option-ad:has(input:checked),
+.option-ad:hover {
+  background-color: var(--cor-10);
+}
+
+.option-ad:has(input:focus) {
+  outline: 3px solid var(--cor-a2);
+}
+
+.option-ad input[type="radio"] {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+#category-select:has(#options-view-button-ad:checked) + #options-ad {
+  display: block;
+}
+
+#currency-field {
+  grid-column: 4;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0px 8px;
+  border-radius: 4px;
+}
+
+#date {
+  padding: 4.5px 8px;
+  border: 2px solid var(--cor-a2);
+  border-radius: 4px;
+  grid-column: 4 ;
+  margin-right: 38px;
+}

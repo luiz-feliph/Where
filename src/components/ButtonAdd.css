@@ -1,0 +1,15 @@
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0 16px;
+}
+
+#add-btn {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}

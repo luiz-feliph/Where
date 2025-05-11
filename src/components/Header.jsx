@@ -2,6 +2,7 @@ import "../index.css";
 import "./Header.css";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { useEffect, useState } from "react";
+import CurrencyInput from "react-currency-input-field";
 
 function Header() {
   const [month, setMonth] = useState("");
@@ -13,9 +14,9 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    let selectedValue = document.getElementById("selected-value"), 
-    optionsViewButton = document.getElementById("options-view-button"),
-    inputsOptions = document.querySelectorAll(".option input");
+    let selectedValue = document.getElementById("selected-value"),
+      optionsViewButton = document.getElementById("options-view-button"),
+      inputsOptions = document.querySelectorAll(".option input");
 
     const handler = (event) => {
       if (event.pointerType === "mouse" || event.pointerType === "touch") {
@@ -24,9 +25,7 @@ function Header() {
       }
     };
 
-    inputsOptions.forEach((input) =>
-      input.addEventListener("click", handler)
-    );
+    inputsOptions.forEach((input) => input.addEventListener("click", handler));
 
     return () => {
       inputsOptions.forEach((input) =>
@@ -173,6 +172,27 @@ function Header() {
               <Check id="check" size={16} />
             </li>
           </ul>
+        </div>
+
+        <div className="expected">
+          <label className="font-md semibold cor-10">Expected</label>
+          <CurrencyInput
+            id="currency-input"
+            className="font-lg"
+            name="currency-input"
+            placeholder="R$ 0,00"
+            decimalSeparator=","
+            groupSeparator="."
+            prefix="R$ "
+            decimalsLimit={2}
+          />
+        </div>
+
+        <div className="total">
+          <label className="font-md semibold cor-10">Total</label>
+          <div className="total-bg">
+            <p className="font-lg cor-7">R$ 0,00</p>
+          </div>
         </div>
       </div>
     </header>

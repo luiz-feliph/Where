@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from '../pages/Home'
 import Dashboard from '../pages/Dashboard'
-import Navbar from '../components/Navbar'
+import Navbar from '../shared/components/Navbar'
 
 function AppRoutes() {
 

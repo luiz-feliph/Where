@@ -1,11 +1,10 @@
-import "../index.css";
+import "../../index.css";
 import "./Navbar.css";
 
 
-import Logo from "../assets/Where.svg";
-import Statistic from "../assets/Statistic.svg";
-import Return from "../assets/Return.svg";
-import Add from '../assets/Add.svg'
+import Logo from "../../assets/Where.svg";
+import Statistic from "../../assets/Statistic.svg";
+import Return from "../../assets/Return.svg";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -27,21 +26,14 @@ function Navbar() {
   }
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to={nextRoute}>
+    <div className="navbar-container">
+      <nav>
+          <Link to={nextRoute} id="icon">
             <img src={navIcon} alt={iconAlt} />
           </Link>
-        </li>
-        <li>
-          <img src={Logo} alt="Where Logo" width="92" height="25" />
-        </li>
-        <li>
-          <img src={Add} alt="Add row"  height="30" />
-        </li>
-      </ul>
-    </nav>
+          <img src={Logo} alt="Where Logo" width="92" height="25" id="logo"/>
+      </nav>
+    </div>
   );
 }
 
