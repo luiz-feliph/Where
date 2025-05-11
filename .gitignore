@@ -1,0 +1,27 @@
+# Ignore geral
+.DS_Store
+.env
+*.log
+node_modules/
+dist/
+build/
+*.local
+*.lock
+
+# Backend (api/)
+api/node_modules/
+api/.env
+api/*.log
+
+# Frontend (frontend/)
+where-project/node_modules/
+where-project/.env
+where-project/.next/
+where-project/build/
+where-project/dist/
+where-project/*.log
+
+# Editor/IDE configs
+.vscode/
+.idea/
+*.swp
