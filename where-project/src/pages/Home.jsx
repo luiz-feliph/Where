@@ -33,8 +33,8 @@ useEffect(() => {
       <div>
         <ToastContainer position="bottom-right"/>
         <Header />
-        <AddData />
-        <DataTable FinanceData={FinanceData}/>
+        <AddData onEdit={onEdit} setOnEdit={setOnEdit} getFinanceData={getFinanceData} />
+        <DataTable setOnEdit={setOnEdit} FinanceData={FinanceData} setFinanceData={setFinanceData}/>
       </div>
   )
 }

@@ -1,11 +1,71 @@
 import "../index.css";
 import "./AddData.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import CurrencyInput from "react-currency-input-field";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
-import ButtonAdd from "./ButtonAdd";
+import { toast } from "react-toastify";
+import axios from "axios";
+import addIcon from "../assets/Add.svg";
 
-function AddData() {
+function AddData({ getFinanceData, onEdit, setOnEdit }) {
+  const ref = useRef();
+
+  useEffect(() => {
+    if (onEdit) {
+      const FinanceData = ref.current;
+
+      FinanceData.name.value = onEdit.name;
+      FinanceData.category.value = onEdit.category;
+      FinanceData.value.value = onEdit.value;
+      FinanceData.date.value = onEdit.date;
+    }
+  }, [onEdit]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const FinanceData = ref.current;
+
+    if (
+      !FinanceData.name.value ||
+      !FinanceData.category.value ||
+      !FinanceData.value.value ||
+      !FinanceData.date.value
+    ) {
+      return toast.warn("Preencha todos os campos!");
+    }
+
+    if (onEdit) {
+      await axios
+        .put("http://localhost:8800/" + onEdit.id, {
+          name: FinanceData.name.value,
+          category: FinanceData.category.value,
+          value: FinanceData.value.value,
+          date: FinanceData.date.value,
+        })
+        .then(({ data }) => toast.success(data))
+        .catch(({ data }) => toast.error(data));
+    } else {
+      await axios
+        .post("http://localhost:8800", {
+          name: FinanceData.name.value,
+          category: FinanceData.category.value,
+          value: FinanceData.value.value,
+          date: FinanceData.date.value,
+        })
+        .then(({ data }) => toast.success(data))
+        .catch(({ data }) => toast.error(data));
+    }
+
+    FinanceData.name.value = "";
+    FinanceData.category.value = "";
+    FinanceData.value.value = "";
+    FinanceData.date.value = "";
+
+    setOnEdit(null);
+    getFinanceData();
+  };
+
   useEffect(() => {
     let selectedValueAd = document.getElementById("selected-value-ad"),
       optionsViewButtonAd = document.getElementById("options-view-button-ad"),
@@ -30,12 +90,11 @@ function AddData() {
   }, []);
 
   return (
-    <div className="content">
-      <form id="addData">
+      <form id="addData" ref={ref} onSubmit={handleSubmit}>
         <input
           type="text"
           id="name"
-          name="Name"
+          name="name"
           placeholder="Name"
           className="semibold cor-7 font-md"
         />
@@ -119,7 +178,7 @@ function AddData() {
         <CurrencyInput
           id="currency-field"
           className="semibold cor-7 font-md"
-          name="currency-input"
+          name="value"
           placeholder="Value"
           decimalSeparator=","
           groupSeparator="."
@@ -127,13 +186,19 @@ function AddData() {
           decimalsLimit={2}
         />
 
-        <input type="date" name="date" id="date" className="medium cor-7 font-lg" />
+        <input
+          type="date"
+          name="date"
+          id="date"
+          className="medium cor-7 font-lg"
+        />
 
+        <div className="btn-container">
+          <button id="add-btn" type="submit">
+            <img src={addIcon} alt="" />
+          </button>
+        </div>
       </form>
-
-    <ButtonAdd />
-     
-    </div>
   );
 }
 
