@@ -1,18 +1,16 @@
-import './index.css'
-import './App.css'
-import Header from './components/Header'
-import AddData from './components/AddData'
-import DataTable from './components/DataTable'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import "./index.css";
+import "./App.css";
+import Header from "./components/Header";
+import AddData from "./components/AddData";
+import DataTable from "./components/DataTable";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   const [FinanceData, setFinanceData] = useState([]);
-  const [onEdit, setOnEdit] = useState(null)
+  const [onEdit, setOnEdit] = useState(null);
 
   const getFinanceData = async () => {
     try {
@@ -23,20 +21,51 @@ function App() {
     }
   };
 
-useEffect(() => {
-  toast.success("Toast funcionando!");
-  getFinanceData();
-}, []);
-  
+  useEffect(() => {
+    toast.success("Toast funcionando!");
+    getFinanceData();
+  }, []);
+
+  const [month, setMonth] = useState("");
+
+  useEffect(() => {
+    const date = new Date();
+    const month = date.toLocaleString("default", { month: "long" });
+    setMonth(month);
+  }, []);
+
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    const filtered = FinanceData.filter((item) => {
+      const itemDate = new Date(item.date);
+      const itemMonth = itemDate.toLocaleString("default", { month: "long" });
+     if (itemMonth === month) {
+      return item
+     };
+    });
+
+    setFilteredData(filtered);
+  }, [FinanceData, month]);
 
   return (
-      <div>
-        <ToastContainer position="bottom-right"/>
-        <Header />
-        <AddData onEdit={onEdit} setOnEdit={setOnEdit} getFinanceData={getFinanceData} />
-        <DataTable setOnEdit={setOnEdit} FinanceData={FinanceData} setFinanceData={setFinanceData}/>
-      </div>
-  )
+    <div>
+      <ToastContainer position="bottom-right" />
+      <Header month={month} setMonth={setMonth} />
+      <AddData
+        onEdit={onEdit}
+        setOnEdit={setOnEdit}
+        getFinanceData={getFinanceData}
+      />
+      <DataTable
+        setOnEdit={setOnEdit}
+        FinanceData={filteredData}
+        setFinanceData={setFinanceData}
+        month={month}
+        setMonth={setMonth}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;

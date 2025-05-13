@@ -5,9 +5,8 @@ import axios from "axios";
 import Remove from "../assets/Remove.svg";
 import Edit from "../assets/Edit.svg";
 
-function DataTable({ FinanceData, setFinanceData, setOnEdit }) {
-
-   const handleEdit = (item) => {
+function DataTable({ FinanceData, setFinanceData, setOnEdit, month, setMonth }) {
+  const handleEdit = (item) => {
     setOnEdit(item);
   };
 
@@ -24,6 +23,10 @@ function DataTable({ FinanceData, setFinanceData, setOnEdit }) {
 
     setOnEdit(null);
   };
+
+  function daysInMonth(month, year) {
+    return new Date(year, month, 0).getDate();
+  }
 
   return (
     <table id="dataTable-container">
@@ -47,7 +50,11 @@ function DataTable({ FinanceData, setFinanceData, setOnEdit }) {
                 <img src={Edit} alt="Editar" onClick={() => handleEdit(item)} />
               </td>
               <td>
-                <img src={Remove} alt="Remover" onClick={() => handleDelete(item.id)}/>
+                <img
+                  src={Remove}
+                  alt="Remover"
+                  onClick={() => handleDelete(item.id)}
+                />
               </td>
             </tr>
           );

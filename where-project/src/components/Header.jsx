@@ -3,14 +3,8 @@ import "./Header.css";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 
-function Header() {
-  const [month, setMonth] = useState("");
-
-  useEffect(() => {
-    const date = new Date();
-    const month = date.toLocaleString("default", { month: "long" });
-    setMonth(month);
-  }, []);
+function Header({month, setMonth}) {
+  
 
   useEffect(() => {
     let selectedValue = document.getElementById("selected-value"),
@@ -19,7 +13,7 @@ function Header() {
 
     const handler = (event) => {
       if (event.pointerType === "mouse" || event.pointerType === "touch") {
-        selectedValue.textContent = event.currentTarget.dataset.label;
+        setMonth(event.currentTarget.dataset.label);
         optionsViewButton.click();
       }
     };

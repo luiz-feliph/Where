@@ -75,8 +75,9 @@
   width: 100%;
   border: 1px solid var(--purple);
   background-color: var(--purple-very-light);
-   color: var(--text-secondary);
+  color: var(--text-secondary);
   display: none;
+  z-index: 1;
 }
 
 .option-ad {
@@ -136,7 +137,7 @@
 }
 
 ::-webkit-calendar-picker-indicator {
-    filter: invert(var(--invert))
+    filter: invert(var(--invert));
 }
 
 .btn-container {
