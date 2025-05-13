@@ -1,7 +1,8 @@
 #dataTable-container {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed
+  table-layout: fixed;
+  color: var(--text-primary);
 }
 
 #grid-layout {
@@ -9,7 +10,7 @@
   grid-template-columns: 2fr 1fr 1fr .5fr .5fr;
   gap: 8px;
   margin: 0 16px;
-  border-bottom: 1px solid var(--cor-v1);
+  border-bottom: 1px solid var(--purple);
   align-items: center;
   justify-items: center;
   padding: 4px 0;
@@ -21,3 +22,4 @@
   padding: 0;
   cursor: pointer;
 }
+

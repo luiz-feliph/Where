@@ -1,6 +1,5 @@
 header {
-  background-color: var(--cor-v1);
-  border-radius: 0 0 12px 12px;
+  background-color: var(--purple);
   height: 49px;
   margin-bottom: 16px;
 }
@@ -11,6 +10,10 @@ header {
   gap: 16px;
   margin: 0 16px;
   height: 100%;
+}
+
+#logo {
+  position: absolute;
 }
 
 .select {
@@ -30,11 +33,12 @@ header {
 
 #selected-value {
   margin: 0 auto;
+  color: var(--purple-very-light);
 }
 
 #chevrons {
-  color: var(--cor-v0);
-  background-color: var(--cor-v3);
+  color: var(--yellow-dark);
+  background-color: var(--yellow-very-light);
   border-radius: 4px;
 }
 
@@ -66,8 +70,8 @@ header {
 #options {
   position: absolute;
   width: 100%;
-  border: 1px solid var(--cor-v3);
-  background-color: var(--cor-v1);
+  border: 1px solid var(--purple-deep);
+  background-color: var(--purple-light);
   display: none;
 }
 
@@ -77,8 +81,11 @@ header {
   gap: 5px;
   padding: 6px;
   width: 100%;
-  border-bottom: 1px solid var(--cor-v2);
   position: relative;
+}
+
+.option + .option {
+  border-top: 1px solid var(--purple-deep);
 }
 
 .option svg:last-child {
@@ -87,15 +94,12 @@ header {
 
 .option:has(input:checked),
 .option:hover {
-  background-color: var(--cor-v0);
-}
-
-.option:has(input:focus) {
-  outline: 3px solid var(--cor-v2);
+  background-color: var(--white);
 }
 
 #check {
   display: none;
+  color: var(--yellow);
 }
 
 .option:has(input:checked) #check {
@@ -113,48 +117,24 @@ header {
   display: block;
 }
 
-.expected {
-  grid-column: 4 / 6;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-}
-
 .total {
   display: flex;
-  grid-column: 7 / 9;
+  grid-column: 6 / 9;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   text-align: center;
-}
-
-#currency-input {
-  width: 100%;
-  border: none;
-  border-radius: 0 0 4px 4px;
-  box-shadow: var(--shadow-box);
-  padding: 2px 4px;
-}
-
-
-.expected label {
-  background-color: var(--cor-v2);
-  padding: 2px;
-  border-radius: 4px 4px 0 0;
 }
 
 .total label {
-  background-color: var(--cor-a2);
+  background-color: var(--yellow);
   padding: 2px;
   border-radius: 4px 4px 0 0;
 }
 
 .total-bg {
-  background-color: var(--cor-10);
+  background-color: var(--yellow-very-light);
   border-radius: 0 0 4px 4px;
-  box-shadow: var(--shadow-box);
+  box-shadow: var(--shadow);
   padding: 2px 4px;
 }

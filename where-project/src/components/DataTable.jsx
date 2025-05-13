@@ -39,7 +39,7 @@ function DataTable({ FinanceData, setFinanceData, setOnEdit }) {
       <tbody id="dataTable-container">
         {FinanceData.map((item, i) => {
           return (
-            <tr key={i} id="grid-layout" className="font-lg cor-v4">
+            <tr key={i} id="grid-layout" className="font-lg">
               <td>{item.name}</td>
               <td>{item.category}</td>
               <td>{item.value}</td>

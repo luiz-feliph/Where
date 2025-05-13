@@ -2,7 +2,6 @@ import "../index.css";
 import "./Header.css";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { useEffect, useState } from "react";
-import CurrencyInput from "react-currency-input-field";
 
 function Header() {
   const [month, setMonth] = useState("");
@@ -42,7 +41,7 @@ function Header() {
             <input type="checkbox" id="options-view-button" />
 
             <div id="select-button">
-              <div className="semibold cor-v4" id="selected-value">
+              <div className="semibold" id="selected-value">
                 {month}
               </div>
 
@@ -53,7 +52,7 @@ function Header() {
             </div>
           </div>
 
-          <ul id="options" className="semibold cor-v4">
+          <ul id="options" className="semibold">
             <li className="option">
               <input
                 type="radio"
@@ -172,20 +171,6 @@ function Header() {
               <Check id="check" size={16} />
             </li>
           </ul>
-        </div>
-
-        <div className="expected">
-          <label className="font-md semibold cor-10">Expected</label>
-          <CurrencyInput
-            id="currency-input"
-            className="font-lg"
-            name="currency-input"
-            placeholder="R$ 0,00"
-            decimalSeparator=","
-            groupSeparator="."
-            prefix="R$ "
-            decimalsLimit={2}
-          />
         </div>
 
         <div className="total">

@@ -1,12 +1,40 @@
-import { useState } from 'react'
-import AppRoutes from './routes/AppRoutes'
+import './index.css'
+import './App.css'
+import Header from './components/Header'
+import AddData from './components/AddData'
+import DataTable from './components/DataTable'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
+
+  const [FinanceData, setFinanceData] = useState([]);
+  const [onEdit, setOnEdit] = useState(null)
+
+  const getFinanceData = async () => {
+    try {
+      const res = await axios.get("http://localhost:8800");
+      setFinanceData(res.data.sort((a, b) => (a.date > b.date ? 1 : -1)));
+    } catch (error) {
+      toast.error(error);
+    }
+  };
+
+useEffect(() => {
+  toast.success("Toast funcionando!");
+  getFinanceData();
+}, []);
   
 
   return (
       <div>
-        <AppRoutes />
+        <ToastContainer position="bottom-right"/>
+        <Header />
+        <AddData onEdit={onEdit} setOnEdit={setOnEdit} getFinanceData={getFinanceData} />
+        <DataTable setOnEdit={setOnEdit} FinanceData={FinanceData} setFinanceData={setFinanceData}/>
       </div>
   )
 }

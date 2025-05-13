@@ -96,7 +96,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
           id="name"
           name="name"
           placeholder="Name"
-          className="semibold cor-7 font-md"
+          className="semibold font-md"
         />
 
         <div id="category-container">
@@ -105,7 +105,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
               <input type="checkbox" id="options-view-button-ad" />
 
               <div id="select-button-ad">
-                <div className="semibold cor-7 font-md" id="selected-value-ad">
+                <div className="semibold font-md" id="selected-value-ad">
                   CAT
                 </div>
 
@@ -116,7 +116,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
               </div>
             </div>
 
-            <ul id="options-ad" className="semibold cor-7 font-md">
+            <ul id="options-ad" className="semibold font-md">
               <li className="option-ad">
                 <input
                   type="radio"
@@ -177,7 +177,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
 
         <CurrencyInput
           id="currency-field"
-          className="semibold cor-7 font-md"
+          className="semibold font-md"
           name="value"
           placeholder="Value"
           decimalSeparator=","
@@ -190,7 +190,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
           type="date"
           name="date"
           id="date"
-          className="medium cor-7 font-lg"
+          className="medium font-lg"
         />
 
         <div className="btn-container">
