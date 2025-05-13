@@ -3,7 +3,6 @@ import "./AddData.css";
 import { useEffect, useState, useRef } from "react";
 import CurrencyInput from "react-currency-input-field";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
-import { toast } from "react-toastify";
 import axios from "axios";
 import addIcon from "../assets/Add.svg";
 
@@ -32,7 +31,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
       !FinanceData.value.value ||
       !FinanceData.date.value
     ) {
-      return toast.warn("Preencha todos os campos!");
+      return window.alert("Fill in all fields!");
     }
 
     if (onEdit) {
@@ -43,8 +42,8 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
           value: FinanceData.value.value,
           date: FinanceData.date.value,
         })
-        .then(({ data }) => toast.success(data))
-        .catch(({ data }) => toast.error(data));
+        .then(({ data }) => console.log("sucess: " + data))
+        .catch(({ data }) => console.log("error: " + data));
     } else {
       await axios
         .post("http://localhost:8800", {
@@ -53,8 +52,8 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
           value: FinanceData.value.value,
           date: FinanceData.date.value,
         })
-        .then(({ data }) => toast.success(data))
-        .catch(({ data }) => toast.error(data));
+        .then(({ data }) => console.log("sucess: " + data))
+        .catch(({ data }) => console.log("error: " + data));
     }
 
     FinanceData.name.value = "";

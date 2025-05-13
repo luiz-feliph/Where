@@ -5,8 +5,6 @@ import AddData from "./components/AddData";
 import DataTable from "./components/DataTable";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [FinanceData, setFinanceData] = useState([]);
@@ -17,12 +15,11 @@ function App() {
       const res = await axios.get("http://localhost:8800");
       setFinanceData(res.data.sort((a, b) => (a.date > b.date ? 1 : -1)));
     } catch (error) {
-      toast.error(error);
+      console.log(error);
     }
   };
 
   useEffect(() => {
-    toast.success("Toast funcionando!");
     getFinanceData();
   }, []);
 
@@ -50,7 +47,6 @@ function App() {
 
   return (
     <div>
-      <ToastContainer position="bottom-right" />
       <Header month={month} setMonth={setMonth} />
       <AddData
         onEdit={onEdit}

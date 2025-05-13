@@ -15,8 +15,7 @@
     "react": "^19.0.0",
     "react-currency-input-field": "^3.10.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.5.3",
-    "react-toastify": "^11.0.5"
+    "react-router-dom": "^7.5.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",

@@ -9,11 +9,11 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr .5fr .5fr;
   gap: 8px;
-  margin: 0 16px;
-  border-bottom: 1px solid var(--purple);
+  margin: 0px 16px;
   align-items: center;
   justify-items: center;
   padding: 4px 0;
+  color: var(--text-secondary);
 }
 
 #grid-layout img {
@@ -23,3 +23,19 @@
   cursor: pointer;
 }
 
+#grid-layout:not(:first-child) {
+  border-top: 1px solid var(--purple);
+}
+
+#grid-layout:last-child {
+  margin-bottom: 32px;
+}
+
+#month-day {
+  margin: 0px 16px 8px 16px;
+  padding-left: 8px;
+  padding-bottom: 2px;
+  color: var(--text-primary);
+  border-bottom: 3px solid var(--purple);
+  border-radius: 8px;
+}

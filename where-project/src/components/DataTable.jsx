@@ -5,7 +5,13 @@ import axios from "axios";
 import Remove from "../assets/Remove.svg";
 import Edit from "../assets/Edit.svg";
 
-function DataTable({ FinanceData, setFinanceData, setOnEdit, month, setMonth }) {
+function DataTable({
+  FinanceData,
+  setFinanceData,
+  setOnEdit,
+  month,
+  setMonth,
+}) {
   const handleEdit = (item) => {
     setOnEdit(item);
   };
@@ -17,9 +23,8 @@ function DataTable({ FinanceData, setFinanceData, setOnEdit, month, setMonth }) 
         const newArray = FinanceData.filter((info) => info.id !== id);
 
         setFinanceData(newArray);
-        toast.success(data);
       })
-      .catch(({ data }) => toast.error(data));
+      .catch(({ data }) => console.log("data: " + data));
 
     setOnEdit(null);
   };
@@ -28,39 +33,60 @@ function DataTable({ FinanceData, setFinanceData, setOnEdit, month, setMonth }) 
     return new Date(year, month, 0).getDate();
   }
 
+  const groupByDay = (FinanceData) => {
+    const grouped = {};
+
+    FinanceData.forEach((item) => {
+      const day = new Date(item.date).getDate();
+
+      if (!grouped[day]) {
+        grouped[day] = [];
+      }
+
+      grouped[day].push(item);
+    });
+
+    return grouped;
+  };
+
+  const dataByDay = groupByDay(FinanceData);
+
   return (
-    <table id="dataTable-container">
-      <thead>
-        <tr id="grid-layout" className="font-lg cor-v4">
-          <th>Name</th>
-          <th>CAT</th>
-          <th>Value</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="dataTable-container">
-        {FinanceData.map((item, i) => {
-          return (
-            <tr key={i} id="grid-layout" className="font-lg">
-              <td>{item.name}</td>
-              <td>{item.category}</td>
-              <td>{item.value}</td>
-              <td>
-                <img src={Edit} alt="Editar" onClick={() => handleEdit(item)} />
-              </td>
-              <td>
-                <img
-                  src={Remove}
-                  alt="Remover"
-                  onClick={() => handleDelete(item.id)}
-                />
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div>
+      {Object.entries(groupByDay(FinanceData)).map(([day, items]) => (
+        <div key={day}>
+          <h3 id="month-day">
+            {month} {day}
+          </h3>
+
+          <table id="dataTable-container">
+            <tbody>
+              {items.map((item) => (
+                <tr key={item.id}  id="grid-layout" className="font-lg">
+                  <td>{item.name}</td>
+                  <td>{item.category}</td>
+                  <td>{item.value}</td>
+                  <td>
+                    <img
+                      src={Edit}
+                      alt="Editar"
+                      onClick={() => handleEdit(item)}
+                    />
+                  </td>
+                  <td>
+                    <img
+                      src={Remove}
+                      alt="Remover"
+                      onClick={() => handleDelete(item.id)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
   );
 }
 
