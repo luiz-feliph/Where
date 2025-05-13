@@ -47,7 +47,11 @@ function App() {
 
   return (
     <div>
-      <Header month={month} setMonth={setMonth} />
+      <Header
+        month={month}
+        setMonth={setMonth} 
+        FinanceData={filteredData}
+      />
       <AddData
         onEdit={onEdit}
         setOnEdit={setOnEdit}

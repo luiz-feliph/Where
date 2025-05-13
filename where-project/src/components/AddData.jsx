@@ -96,6 +96,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
           name="name"
           placeholder="Name"
           className="semibold font-md"
+          autoComplete="off"
         />
 
         <div id="category-container">
@@ -183,6 +184,7 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
           groupSeparator="."
           prefix="R$ "
           decimalsLimit={2}
+          autoComplete="off"
         />
 
         <input
