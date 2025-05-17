@@ -52,7 +52,7 @@ function DataTable({
   const dataByDay = groupByDay(FinanceData);
 
   return (
-    <div>
+    <div id="container-table">
       {Object.entries(groupByDay(FinanceData)).map(([day, items]) => (
         <div key={day}>
           <h3 id="month-day">

@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import AddData from "./components/AddData";
 import DataTable from "./components/DataTable";
+import Chart from "./components/Chart";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -63,6 +64,9 @@ function App() {
         setFinanceData={setFinanceData}
         month={month}
         setMonth={setMonth}
+      />
+      <Chart 
+        FinanceData={filteredData}
       />
     </div>
   );

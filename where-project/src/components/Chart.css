@@ -1,0 +1,14 @@
+#container-chart {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin: 0 16px;
+}
+
+#title {
+  color: var(--text-primary);
+}
+
+#chart {
+  padding: 16px;
+}
