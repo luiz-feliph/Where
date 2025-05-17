@@ -73,6 +73,7 @@ header {
   border: 1px solid var(--purple-deep);
   background-color: var(--purple-light);
   display: none;
+  z-index: 1;
 }
 
 .option {

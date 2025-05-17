@@ -41,7 +41,7 @@ body {
 }
 
 /* Night theme */
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 :root {
   --purple-very-light: #e3d9f9;
   --purple-light: #b9a8e3;
@@ -69,7 +69,7 @@ body {
   --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
   --invert: 1;
 }
-} */
+}
 
 
 

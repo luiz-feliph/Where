@@ -1,14 +1,64 @@
+#view-chart-container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  max-height: 70vh;
+  width: 90vw;
+}
+
+#view-chart {
+  padding: 12px;
+  background-color: var(--purple-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-primary);
+  border-radius: 12px 12px 0 0;
+  z-index: 0;
+}
+
+#chevron-up-vc {
+  display: none;
+}
+
+#options-view-button-vc:checked + #view-chart #chevron-down-vc {
+  display: none;
+}
+#options-view-button-vc:checked + #view-chart #chevron-up-vc {
+  display: inline-block;
+}
+
+#view-button {
+  position: relative;
+}
+
+#options-view-button-vc {
+  all: unset;
+
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+  z-index: 3;
+}
+
 #container-chart {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  margin: 0 16px;
+  padding: 16px;
+  background-color: var(--purple-very-light);
 }
 
 #title {
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 #chart {
   padding: 16px;
+}
+
+.hidden {
+  display: none !important;
 }
