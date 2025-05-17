@@ -3,9 +3,7 @@ import "./Header.css";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 
-function Header({month, setMonth, FinanceData}) {
-  
-
+function Header({ month, setMonth, FinanceData }) {
   useEffect(() => {
     let selectedValue = document.getElementById("selected-value"),
       optionsViewButton = document.getElementById("options-view-button"),
@@ -26,16 +24,16 @@ function Header({month, setMonth, FinanceData}) {
       );
     };
   }, []);
-  
-  let total = 0
+
+  let total = 0;
 
   FinanceData.forEach((data) => {
     const value = data.value,
-    filteredValue = value.toString().replace("R$", "").replace(",", "."),
-    realValue= Number(filteredValue)
+      filteredValue = value.toString().replace("$", "").replace(",", "."),
+      realValue = Number(filteredValue);
 
-    total += realValue
-  })
+    total += realValue;
+  });
 
   return (
     <header>
@@ -180,7 +178,7 @@ function Header({month, setMonth, FinanceData}) {
         <div className="total">
           <label className="font-md semibold">Total</label>
           <div className="total-bg">
-            <p className="font-md">R$ {total}</p>
+            <p className="font-md">$ {total}</p>
           </div>
         </div>
       </div>

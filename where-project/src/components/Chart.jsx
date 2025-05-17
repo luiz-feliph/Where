@@ -19,7 +19,7 @@ const Chart = ({ FinanceData }) => {
     FinanceData.forEach((item) => {
       const itemCategory = item.category.toLowerCase();
       const value = item.value,
-        filteredValue = value.toString().replace("R$", "").replace(",", "."),
+        filteredValue = value.toString().replace("$", "").replace(",", "."),
         realValue = Number(filteredValue);
       if (itemCategory === "food") {
         food += realValue;
@@ -53,7 +53,7 @@ const Chart = ({ FinanceData }) => {
     labels: ["Food", "Home", "Fun", "Health", "Transport"],
     datasets: [
       {
-        label: "R$",
+        label: "$",
         data: filteredCategory,
         backgroundColor: [
           "rgba(235, 222, 255, 0.7)",

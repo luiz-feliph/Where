@@ -89,117 +89,112 @@ function AddData({ getFinanceData, onEdit, setOnEdit }) {
   }, []);
 
   return (
-      <form id="addData" ref={ref} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Name"
-          className="semibold font-md"
-          autoComplete="off"
-        />
+    <form id="addData" ref={ref} onSubmit={handleSubmit}>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Name"
+        className="semibold font-md"
+        autoComplete="off"
+      />
 
-        <div id="category-container">
-          <div className="select-ad">
-            <div id="category-select">
-              <input type="checkbox" id="options-view-button-ad" />
+      <div id="category-container">
+        <div className="select-ad">
+          <div id="category-select">
+            <input type="checkbox" id="options-view-button-ad" />
 
-              <div id="select-button-ad">
-                <div className="semibold font-md" id="selected-value-ad">
-                  CAT
-                </div>
+            <div id="select-button-ad">
+              <div className="semibold font-md" id="selected-value-ad">
+                CAT
+              </div>
 
-                <div id="chevrons-ad">
-                  <ChevronDown id="chevron-down-ad" size={16} />
-                  <ChevronUp id="chevron-up-ad" size={16} />
-                </div>
+              <div id="chevrons-ad">
+                <ChevronDown id="chevron-down-ad" size={16} />
+                <ChevronUp id="chevron-up-ad" size={16} />
               </div>
             </div>
-
-            <ul id="options-ad" className="semibold font-md">
-              <li className="option-ad">
-                <input
-                  type="radio"
-                  name="category"
-                  value="food"
-                  data-label="Food"
-                />
-
-                <span className="label-ad"> Food</span>
-              </li>
-
-              <li className="option-ad">
-                <input
-                  type="radio"
-                  name="category"
-                  value="home"
-                  data-label="Home"
-                />
-
-                <span className="label-ad">Home</span>
-              </li>
-
-              <li className="option-ad">
-                <input
-                  type="radio"
-                  name="category"
-                  value="transport"
-                  data-label="Transport"
-                />
-
-                <span className="label-ad">Transport</span>
-              </li>
-
-              <li className="option-ad">
-                <input
-                  type="radio"
-                  name="category"
-                  value="fun"
-                  data-label="Fun"
-                />
-
-                <span className="label-ad">Fun</span>
-              </li>
-
-              <li className="option-ad">
-                <input
-                  type="radio"
-                  name="category"
-                  value="health"
-                  data-label="Health"
-                />
-
-                <span className="label-ad">Health</span>
-              </li>
-            </ul>
           </div>
+
+          <ul id="options-ad" className="semibold font-md">
+            <li className="option-ad">
+              <input
+                type="radio"
+                name="category"
+                value="Food"
+                data-label="Food"
+              />
+
+              <span className="label-ad"> Food</span>
+            </li>
+
+            <li className="option-ad">
+              <input
+                type="radio"
+                name="category"
+                value="Home"
+                data-label="Home"
+              />
+
+              <span className="label-ad">Home</span>
+            </li>
+
+            <li className="option-ad">
+              <input
+                type="radio"
+                name="category"
+                value="Transport"
+                data-label="Transport"
+              />
+
+              <span className="label-ad">Transport</span>
+            </li>
+
+            <li className="option-ad">
+              <input
+                type="radio"
+                name="category"
+                value="Fun"
+                data-label="Fun"
+              />
+
+              <span className="label-ad">Fun</span>
+            </li>
+
+            <li className="option-ad">
+              <input
+                type="radio"
+                name="category"
+                value="Health"
+                data-label="Health"
+              />
+
+              <span className="label-ad">Health</span>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <CurrencyInput
-          id="currency-field"
-          className="semibold font-md"
-          name="value"
-          placeholder="Value"
-          decimalSeparator=","
-          groupSeparator="."
-          prefix="R$ "
-          decimalsLimit={2}
-          autoComplete="off"
-        />
+      <CurrencyInput
+        id="currency-field"
+        className="semibold font-md"
+        name="value"
+        placeholder="Value"
+        decimalSeparator=","
+        groupSeparator="."
+        prefix="$ "
+        decimalsLimit={2}
+        autoComplete="off"
+      />
 
-        <input
-          type="date"
-          name="date"
-          id="date"
-          className="medium font-lg"
-        />
+      <input type="date" name="date" id="date" className="medium font-lg" />
 
-        <div className="btn-container">
-          <button id="add-btn" type="submit">
-            <img src={addIcon} alt="" />
-          </button>
-        </div>
-      </form>
+      <div className="btn-container">
+        <button id="add-btn" type="submit">
+          <img src={addIcon} alt="" />
+        </button>
+      </div>
+    </form>
   );
 }
 
